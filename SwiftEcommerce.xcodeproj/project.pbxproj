@@ -21,6 +21,8 @@
 		956DC1BE2B165A0F00CB2401 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956DC1BD2B165A0F00CB2401 /* LoginView.swift */; };
 		956DC1C02B165A2D00CB2401 /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956DC1BF2B165A2D00CB2401 /* OrderView.swift */; };
 		956DC1C22B165A4500CB2401 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956DC1C12B165A4500CB2401 /* RegisterView.swift */; };
+		9578C59C2B16656800431873 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578C59B2B16656700431873 /* NotificationView.swift */; };
+		9578C59F2B16662F00431873 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578C59E2B16662F00431873 /* Header.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		956DC1BD2B165A0F00CB2401 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		956DC1BF2B165A2D00CB2401 /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		956DC1C12B165A4500CB2401 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		9578C59B2B16656700431873 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		9578C59E2B16662F00431873 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 		956DC1AB2B16560400CB2401 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9578C59D2B1665EE00431873 /* Common */,
 				956DC1B22B1658BA00CB2401 /* FormControls */,
 				956DC1AD2B16563100CB2401 /* Buttons */,
 			);
@@ -108,6 +113,7 @@
 				956DC1BD2B165A0F00CB2401 /* LoginView.swift */,
 				956DC1BF2B165A2D00CB2401 /* OrderView.swift */,
 				956DC1C12B165A4500CB2401 /* RegisterView.swift */,
+				9578C59B2B16656700431873 /* NotificationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -127,6 +133,14 @@
 				956DC1B32B1658D900CB2401 /* InputBox.swift */,
 			);
 			path = FormControls;
+			sourceTree = "<group>";
+		};
+		9578C59D2B1665EE00431873 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9578C59E2B16662F00431873 /* Header.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,12 +216,14 @@
 				956DC1BC2B1659DF00CB2401 /* HomeView.swift in Sources */,
 				956DC1B62B16596C00CB2401 /* AccountView.swift in Sources */,
 				956DC1B82B16598F00CB2401 /* CartView.swift in Sources */,
+				9578C59C2B16656800431873 /* NotificationView.swift in Sources */,
 				956DC1BA2B1659A900CB2401 /* ForgotPasswordView.swift in Sources */,
 				956DC1B12B16572C00CB2401 /* ButtonSecondary.swift in Sources */,
 				956DC1AF2B16564600CB2401 /* ButtonPrimary.swift in Sources */,
 				956DC1A02B1655D100CB2401 /* ContentView.swift in Sources */,
 				956DC19E2B1655D100CB2401 /* SwiftEcommerceApp.swift in Sources */,
 				956DC1C02B165A2D00CB2401 /* OrderView.swift in Sources */,
+				9578C59F2B16662F00431873 /* Header.swift in Sources */,
 				956DC1C22B165A4500CB2401 /* RegisterView.swift in Sources */,
 				956DC1BE2B165A0F00CB2401 /* LoginView.swift in Sources */,
 				956DC1B42B1658D900CB2401 /* InputBox.swift in Sources */,
