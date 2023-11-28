@@ -11,7 +11,7 @@ import SwiftUI
 struct SwiftEcommerceApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            NotificationView()
         }
     }
 }
