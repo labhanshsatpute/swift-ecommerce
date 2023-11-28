@@ -17,7 +17,7 @@ struct ContentView: View {
             }
             AccountView().tabItem {
                 Image(systemName: "person.crop.circle")
-                Text("My Acconut")
+                Text("My Profiles")
             }
 
         }
