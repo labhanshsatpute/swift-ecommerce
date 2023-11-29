@@ -10,9 +10,11 @@ import SwiftUI
 struct Header: View {
     var title: String
     
+    @State private var openNotification: Bool = false
+    
     var body: some View {
         HStack {
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {}, label: {
                 Image(systemName: "chevron.left")
                     .fontWeight(.medium)
             })
@@ -26,16 +28,19 @@ struct Header: View {
                 .fontWeight(.bold)
                 .foregroundColor(Color.ascentDark)
             Spacer()
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                Image(systemName: "bell")
-                    .fontWeight(.medium)
-            })
-            .foregroundColor(Color.ascentDark)
-            .frame(width: 40, height: 40)
-            .background(Color.ascent.opacity(0.3))
-            .cornerRadius(10)
-
-        }
+            NavigationLink(destination: NotificationView(), isActive: $openNotification) {
+                Button(action: {
+                    openNotification = true
+                }, label: {
+                    Image(systemName: "bell")
+                        .fontWeight(.medium)
+                })
+                .foregroundColor(Color.ascentDark)
+                .frame(width: 40, height: 40)
+                .background(Color.ascent.opacity(0.3))
+                .cornerRadius(10)
+            }
+        }.padding(.horizontal, 15)
     }
 }
 

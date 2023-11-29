@@ -34,51 +34,47 @@ struct DashboardTab: View {
 }
 
 struct AccountView: View {
-     
+    
     var email: String = "kundankapgate2005@gmail.com"
     
     var body: some View {
-        NavigationView {
+        ScrollView {
+            
             VStack(alignment: .leading) {
-                Header(title: "My Account")
-                    .padding(.bottom, 20)
-                VStack(alignment: .leading) {
-                    HStack(alignment: .center, spacing: 10) {
-                        Image(systemName: "person.crop.circle")
-                            .font(.system(size: 50))
-                            .foregroundColor(Color.gray)
-                        VStack(alignment: .leading) {
-                            Text("Kundan Kapgate")
-                                .font(.title3)
-                                .fontWeight(.semibold)
-                                .foregroundColor(Color.ascentDark)
-                            Text(email)
-                                .font(.subheadline)
-                                .foregroundColor(.gray)
-                        }
-                        
-                    }.padding(.bottom, 10)
-                    Divider()
-                    
+                HStack(alignment: .center, spacing: 10) {
+                    Image(systemName: "person.crop.circle")
+                        .font(.system(size: 50))
+                        .foregroundColor(Color.gray)
                     VStack(alignment: .leading) {
-                            DashboardTab(icon: "shippingbox", label: "My Orders", description: "Manage your orders")
-                        
-                            DashboardTab(icon: "globe", label: "Languages", description: "Manage application languages")
-                            
-                            DashboardTab(icon: "questionmark.circle", label: "FAQs", description: "Manage your orders")
-                    
-                            DashboardTab(icon: "lock.shield", label: "Privacy Policy", description: "Manage application languages")
-                        
-                            DashboardTab(icon: "gearshape", label: "All settings", description: "Manage your orders")
-                    
-                            DashboardTab(icon: "rectangle.portrait.and.arrow.right", label: "Log out", description: "Manage application languages")
-                        
+                        Text("Kundan Kapgate")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                            .foregroundColor(Color.ascentDark)
+                        Text(email)
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
                     }
+                    
+                }.padding(.bottom, 10)
+                Divider()
+                
+                VStack(alignment: .leading) {
+                    DashboardTab(icon: "shippingbox", label: "My Orders", description: "Manage your orders")
+                    
+                    DashboardTab(icon: "globe", label: "Languages", description: "Manage application languages")
+                    
+                    DashboardTab(icon: "questionmark.circle", label: "FAQs", description: "Manage your orders")
+                    
+                    DashboardTab(icon: "lock.shield", label: "Privacy Policy", description: "Manage application languages")
+                    
+                    DashboardTab(icon: "gearshape", label: "All settings", description: "Manage your orders")
+                    
+                    DashboardTab(icon: "rectangle.portrait.and.arrow.right", label: "Log out", description: "Manage application languages")
+                    
                 }
-                Spacer()
-            }.padding(15)
-
-        }
+            }.padding(.horizontal, 15).padding(.top, 10)
+        }.padding(0)
+        
     }
 }
 

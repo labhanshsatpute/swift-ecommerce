@@ -45,9 +45,7 @@ struct NotificationCard: View {
 struct NotificationView: View {
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading) {
-                Header(title: "Notifications")
-                    .padding(.bottom, 15)
+            
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {
                         Text("4 unread notifications")
@@ -74,7 +72,6 @@ struct NotificationView: View {
                 }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 Spacer()
             }.padding(15).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
-        }
     }
 }
 
