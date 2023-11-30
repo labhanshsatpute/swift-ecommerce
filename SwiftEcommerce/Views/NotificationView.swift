@@ -32,7 +32,7 @@ struct NotificationCard: View {
                 .font(.footnote)
                 .fontWeight(.regular)
                 .foregroundColor(Color.gray.opacity(0.8))
-
+            
         }
         .padding(.vertical, 15)
         .padding(.horizontal, 17)
@@ -43,9 +43,13 @@ struct NotificationCard: View {
 }
 
 struct NotificationView: View {
+    
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationStack {
-            
+            NavigationView {
+                
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {
                         Text("4 unread notifications")
@@ -62,16 +66,33 @@ struct NotificationView: View {
                         NotificationCard(title: "Order Placed", description: "Your order of Rs 357.00 is successfully placed you will recieve a confirmation mail soon", time: "4 minutes ago", isRead: true)
                         NotificationCard(title: "Order Placed", description: "Your order of Rs 357.00 is successfully placed you will recieve a confirmation mail soon", time: "4 minutes ago", isRead: true)
                         NotificationCard(title: "Order Placed", description: "Your order of Rs 357.00 is successfully placed you will recieve a confirmation mail soon", time: "4 minutes ago", isRead: false)
-
+                        
                         NotificationCard(title: "Order Placed", description: "Your order of Rs 357.00 is successfully placed you will recieve a confirmation mail soon", time: "4 minutes ago", isRead: false)
                         NotificationCard(title: "Order Placed", description: "Your order of Rs 357.00 is successfully placed you will recieve a confirmation mail soon", time: "4 minutes ago", isRead: true)
                         NotificationCard(title: "Order Placed", description: "Your order of Rs 357.00 is successfully placed you will recieve a confirmation mail soon", time: "4 minutes ago", isRead: true)
                         NotificationCard(title: "Order Placed", description: "Your order of Rs 357.00 is successfully placed you will recieve a confirmation mail soon", time: "4 minutes ago", isRead: true)
-
+                        
                     }
                 }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
                 Spacer()
             }.padding(15).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: { dismiss() }, label: {
+                    Image(systemName: "chevron.left")
+                        .fontWeight(.bold)
+                        .font(.subheadline)
+                }).foregroundColor(Color.ascentDark)
+            }
+            ToolbarItem(placement: .topBarLeading) {
+                Text("Notifications")
+                    .font(.title2)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.ascentDark)
+            }
+        }
     }
 }
 

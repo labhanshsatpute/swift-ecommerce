@@ -1,24 +1,9 @@
-//
-//  Header.swift
-//  SwiftEcommerce
-//
-//  Created by Labhansh Satpute on 28/11/23.
-//
-
 import SwiftUI
 
-struct Header: View {
-    var title: String
-    
+struct NotificationButton: View {
     @State private var openNotification: Bool = false
     var body: some View {
-        HStack {
-            Text(title)
-                .font(.title2)
-                .fontWeight(.semibold)
-                .foregroundColor(Color.ascentDark)
-            Spacer()
-            NavigationLink(destination: NotificationView(), isActive: $openNotification) {
+        NavigationLink(destination: NotificationView(), isActive: $openNotification) {
                 Button(action: {
                     openNotification = true
                 }, label: {
@@ -30,10 +15,5 @@ struct Header: View {
                 .background(Color.ascent.opacity(0.3))
                 .cornerRadius(10)
             }
-        }.padding(.horizontal, 15)
     }
-}
-
-#Preview {
-    Header(title: "Notifications")
 }

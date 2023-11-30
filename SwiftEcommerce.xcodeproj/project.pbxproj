@@ -23,6 +23,8 @@
 		956DC1C22B165A4500CB2401 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956DC1C12B165A4500CB2401 /* RegisterView.swift */; };
 		9578C59C2B16656800431873 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578C59B2B16656700431873 /* NotificationView.swift */; };
 		9578C59F2B16662F00431873 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578C59E2B16662F00431873 /* Header.swift */; };
+		95A7A7ED2B187DA900C3479B /* HeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A7EC2B187DA900C3479B /* HeaderTitle.swift */; };
+		95A7A7EF2B187DD500C3479B /* NotificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A7EE2B187DD500C3479B /* NotificationButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		956DC1C12B165A4500CB2401 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		9578C59B2B16656700431873 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		9578C59E2B16662F00431873 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
+		95A7A7EC2B187DA900C3479B /* HeaderTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitle.swift; sourceTree = "<group>"; };
+		95A7A7EE2B187DD500C3479B /* NotificationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +142,19 @@
 		9578C59D2B1665EE00431873 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				95A7A7EB2B187D9100C3479B /* Header */,
 				9578C59E2B16662F00431873 /* Header.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		95A7A7EB2B187D9100C3479B /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				95A7A7EC2B187DA900C3479B /* HeaderTitle.swift */,
+				95A7A7EE2B187DD500C3479B /* NotificationButton.swift */,
+			);
+			path = Header;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +233,7 @@
 				9578C59C2B16656800431873 /* NotificationView.swift in Sources */,
 				956DC1BA2B1659A900CB2401 /* ForgotPasswordView.swift in Sources */,
 				956DC1B12B16572C00CB2401 /* ButtonSecondary.swift in Sources */,
+				95A7A7EF2B187DD500C3479B /* NotificationButton.swift in Sources */,
 				956DC1AF2B16564600CB2401 /* ButtonPrimary.swift in Sources */,
 				956DC1A02B1655D100CB2401 /* ContentView.swift in Sources */,
 				956DC19E2B1655D100CB2401 /* SwiftEcommerceApp.swift in Sources */,
@@ -226,6 +241,7 @@
 				9578C59F2B16662F00431873 /* Header.swift in Sources */,
 				956DC1C22B165A4500CB2401 /* RegisterView.swift in Sources */,
 				956DC1BE2B165A0F00CB2401 /* LoginView.swift in Sources */,
+				95A7A7ED2B187DA900C3479B /* HeaderTitle.swift in Sources */,
 				956DC1B42B1658D900CB2401 /* InputBox.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
