@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9544F38B2B1A446A00104B25 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544F38A2B1A446A00104B25 /* ProductCard.swift */; };
 		956DC19E2B1655D100CB2401 /* SwiftEcommerceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956DC19D2B1655D100CB2401 /* SwiftEcommerceApp.swift */; };
 		956DC1A02B1655D100CB2401 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956DC19F2B1655D100CB2401 /* ContentView.swift */; };
 		956DC1A22B1655D200CB2401 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956DC1A12B1655D200CB2401 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9544F38A2B1A446A00104B25 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		956DC19A2B1655D100CB2401 /* SwiftEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956DC19D2B1655D100CB2401 /* SwiftEcommerceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftEcommerceApp.swift; sourceTree = "<group>"; };
 		956DC19F2B1655D100CB2401 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9544F3892B1A444500104B25 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				9544F38A2B1A446A00104B25 /* ProductCard.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 		956DC1912B1655D100CB2401 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +112,7 @@
 		956DC1AB2B16560400CB2401 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9544F3892B1A444500104B25 /* Cards */,
 				9578C59D2B1665EE00431873 /* Common */,
 				956DC1B22B1658BA00CB2401 /* FormControls */,
 				956DC1AD2B16563100CB2401 /* Buttons */,
@@ -235,6 +246,7 @@
 				956DC1B82B16598F00CB2401 /* CartView.swift in Sources */,
 				A3A5BF812B19EB4400382575 /* GetStartedView.swift in Sources */,
 				9578C59C2B16656800431873 /* NotificationView.swift in Sources */,
+				9544F38B2B1A446A00104B25 /* ProductCard.swift in Sources */,
 				956DC1BA2B1659A900CB2401 /* ForgotPasswordView.swift in Sources */,
 				956DC1B12B16572C00CB2401 /* ButtonSecondary.swift in Sources */,
 				95A7A7EF2B187DD500C3479B /* NotificationButton.swift in Sources */,
