@@ -2,18 +2,21 @@ import SwiftUI
 
 struct CategoryCard: View {
     
-    var image: String
-    var title: String
+    var category: Category
     
     var body: some View {
         VStack(alignment: .center) {
-            Image(image)
-                .resizable()
-                .aspectRatio(contentMode: .fit).cornerRadius(5).padding(.bottom, 5)
-                .frame(width: 90, height: 90)
-            VStack(alignment: .center) {
-                Text(title).font(.caption2).fontWeight(.medium)
+            AsyncImage(url: URL(string: "\(storageBaseUrl)/\(category.thumbnail_image)")) { image in
+                image.resizable()
+                    .aspectRatio(contentMode: .fit).cornerRadius(8).padding(.bottom, 5)
+                    .frame(width: 90, height: 90)
+            } placeholder: {
+                ProgressView()
             }
+            VStack(alignment: .center) {
+                Text(category.name).font(.caption2).fontWeight(.medium)
+            }
+
         }
     }
 }

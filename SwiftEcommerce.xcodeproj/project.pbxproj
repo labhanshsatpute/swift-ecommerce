@@ -27,6 +27,7 @@
 		95A7A7ED2B187DA900C3479B /* HeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A7EC2B187DA900C3479B /* HeaderTitle.swift */; };
 		95A7A7EF2B187DD500C3479B /* NotificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A7EE2B187DD500C3479B /* NotificationButton.swift */; };
 		95F803B42B1B0920004EAF6E /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F803B32B1B0920004EAF6E /* CategoryCard.swift */; };
+		95F803B72B1B54FF004EAF6E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F803B62B1B54FF004EAF6E /* Constants.swift */; };
 		A3A5BF812B19EB4400382575 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5BF802B19EB4400382575 /* GetStartedView.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		95A7A7EC2B187DA900C3479B /* HeaderTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitle.swift; sourceTree = "<group>"; };
 		95A7A7EE2B187DD500C3479B /* NotificationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationButton.swift; sourceTree = "<group>"; };
 		95F803B32B1B0920004EAF6E /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
+		95F803B62B1B54FF004EAF6E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A3A5BF802B19EB4400382575 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 		956DC19C2B1655D100CB2401 /* SwiftEcommerce */ = {
 			isa = PBXGroup;
 			children = (
+				95F803B52B1B54F0004EAF6E /* Config */,
 				956DC1AC2B16560D00CB2401 /* Views */,
 				956DC1AB2B16560400CB2401 /* Components */,
 				956DC19D2B1655D100CB2401 /* SwiftEcommerceApp.swift */,
@@ -172,6 +175,14 @@
 				95A7A7EE2B187DD500C3479B /* NotificationButton.swift */,
 			);
 			path = Header;
+			sourceTree = "<group>";
+		};
+		95F803B52B1B54F0004EAF6E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				95F803B62B1B54FF004EAF6E /* Constants.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 				956DC19E2B1655D100CB2401 /* SwiftEcommerceApp.swift in Sources */,
 				956DC1C02B165A2D00CB2401 /* OrderView.swift in Sources */,
 				9578C59F2B16662F00431873 /* Header.swift in Sources */,
+				95F803B72B1B54FF004EAF6E /* Constants.swift in Sources */,
 				956DC1C22B165A4500CB2401 /* RegisterView.swift in Sources */,
 				956DC1BE2B165A0F00CB2401 /* LoginView.swift in Sources */,
 				95A7A7ED2B187DA900C3479B /* HeaderTitle.swift in Sources */,
