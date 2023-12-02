@@ -5,7 +5,7 @@ struct ProductCard: View {
         VStack(alignment: .leading) {
             Image("productImage")
                 .resizable()
-                .aspectRatio(contentMode: .fill).cornerRadius(5).padding(.bottom, 5)
+                .aspectRatio(contentMode: .fill).cornerRadius(10).padding(.bottom, 5)
             VStack(alignment: .leading, spacing: 7) {
                 Text("Heather Men's Regular Fit T-Shirt").font(.subheadline).fontWeight(.semibold).lineSpacing(5)
                 Text("Mens Clothing").font(.caption2).foregroundColor(.gray)

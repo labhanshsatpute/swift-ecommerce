@@ -23,22 +23,46 @@ struct HomeView: View {
                         .background(Color.ascent)
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                    }.padding(.bottom, 15)
-
+                    }.padding(.bottom, 5)
+                
+                Spacer(minLength: 25)
+                
                 ScrollView(.vertical, content: {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 13, content: {
-                        ProductCard()
-                        ProductCard()
-                        ProductCard()
-                        ProductCard()
-                        ProductCard()
-                        ProductCard()
+                    
+                    VStack(alignment: .leading) {
+                        Text("Explore Categories").font(.headline).fontWeight(.bold).foregroundColor(Color.ascentDark).padding(.bottom, 13)
+                        ScrollView(.horizontal, content: {
+                            HStack(spacing: 20) {
+                                CategoryCard(image: "breakfast", title: "Breakfast")
+                                CategoryCard(image: "cleaning", title: "Cleaning Agents")
+                                CategoryCard(image: "juice", title: "Juice & Drinks")
+                                CategoryCard(image: "pet-food", title: "Pet Foods")
+                                CategoryCard(image: "snacks", title: "Snacks")
+                                CategoryCard(image: "sweet", title: "Sweet Food")
+                                CategoryCard(image: "tea-cofee", title: "Tea & Cofee")
+                            }.padding(.bottom, 15)
+                        })
+                    }
 
-                    })
+                    Spacer(minLength: 10)
+                    
+                    VStack(alignment: .leading) {
+                        Text("Bestselling Products").font(.headline).fontWeight(.bold).foregroundColor(Color.ascentDark).padding(.bottom, 13)
+                        LazyVGrid(columns: [GridItem(.flexible(), spacing: 17), GridItem(.flexible(), spacing: 17)], spacing: 17, content: {
+                            ProductCard()
+                            ProductCard()
+                            ProductCard()
+                            ProductCard()
+                            ProductCard()
+                            ProductCard()
+
+                        })
+
+                    }
                 })
                 
             }
-        }.padding(15)
+        }.padding(.top,15).padding(.horizontal, 15)
     }
 }
 

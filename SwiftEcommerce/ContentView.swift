@@ -6,8 +6,10 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            Header(title: "Ecommerce")
-            Divider()
+            if selectedTab != 0 {
+                Header(title: "Ecommerce")
+                Divider()
+            }
             TabView(selection: $selectedTab) {
                 HomeView().tabItem {
                     Image(systemName: "homekit")
@@ -16,7 +18,7 @@ struct ContentView: View {
                 CartView().tabItem {
                     Image(systemName: "handbag")
                     Text("My Cart")
-                }.tag(1)
+                }.tag(1).badge(3)
                 OrderView().tabItem {
                     Image(systemName: "shippingbox")
                     Text("My Orders")
@@ -25,7 +27,7 @@ struct ContentView: View {
                     Image(systemName: "person.crop.circle")
                     Text("My Account")
                 }.tag(3)
-            }.tint(Color.ascent).frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).padding(0).animation(.easeInOut, value: selectedTab)
+            }.tint(Color.ascent).frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).padding(0).toolbarBackground(Color.white, for: .tabBar)
 
         }.navigationBarBackButtonHidden(true)
     }

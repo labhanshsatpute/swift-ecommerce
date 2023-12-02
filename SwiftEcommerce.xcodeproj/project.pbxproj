@@ -26,6 +26,7 @@
 		9578C59F2B16662F00431873 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9578C59E2B16662F00431873 /* Header.swift */; };
 		95A7A7ED2B187DA900C3479B /* HeaderTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A7EC2B187DA900C3479B /* HeaderTitle.swift */; };
 		95A7A7EF2B187DD500C3479B /* NotificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A7EE2B187DD500C3479B /* NotificationButton.swift */; };
+		95F803B42B1B0920004EAF6E /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F803B32B1B0920004EAF6E /* CategoryCard.swift */; };
 		A3A5BF812B19EB4400382575 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5BF802B19EB4400382575 /* GetStartedView.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		9578C59E2B16662F00431873 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		95A7A7EC2B187DA900C3479B /* HeaderTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTitle.swift; sourceTree = "<group>"; };
 		95A7A7EE2B187DD500C3479B /* NotificationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationButton.swift; sourceTree = "<group>"; };
+		95F803B32B1B0920004EAF6E /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
 		A3A5BF802B19EB4400382575 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				9544F38A2B1A446A00104B25 /* ProductCard.swift */,
+				95F803B32B1B0920004EAF6E /* CategoryCard.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 				956DC1B82B16598F00CB2401 /* CartView.swift in Sources */,
 				A3A5BF812B19EB4400382575 /* GetStartedView.swift in Sources */,
 				9578C59C2B16656800431873 /* NotificationView.swift in Sources */,
+				95F803B42B1B0920004EAF6E /* CategoryCard.swift in Sources */,
 				9544F38B2B1A446A00104B25 /* ProductCard.swift in Sources */,
 				956DC1BA2B1659A900CB2401 /* ForgotPasswordView.swift in Sources */,
 				956DC1B12B16572C00CB2401 /* ButtonSecondary.swift in Sources */,
