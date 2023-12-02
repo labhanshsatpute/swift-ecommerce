@@ -24,13 +24,13 @@ struct HomeView: View {
     @State var searchQuery: String = "";
     
     
-    @State private var selectedOption = 0
-    let options = ["Hyderabad", "Nagpur", "Mumbai"]
+    @State private var selectedCity = 0
+    let cities = ["Hyderabad", "Nagpur", "Mumbai"]
 
     
     var body: some View {
         NavigationStack {
-            ScrollView(.vertical) {
+            ScrollView(.vertical, showsIndicators: false) {
                 
                 VStack(alignment: .leading) {
                         
@@ -38,16 +38,18 @@ struct HomeView: View {
                         HStack(spacing: 0) {
                             Image(systemName: "location")
                                 .font(.title3)
-                            Picker("Select an option", selection: $selectedOption) {
-                                ForEach(0..<options.count) { index in
-                                    Text(options[index])
+                            Picker("Select an option", selection: $selectedCity) {
+                                ForEach(0..<cities.count) { index in
+                                    Text(cities[index])
                                 }
                             }.tint(Color.black).fontWeight(.medium)
                         }.padding(.bottom, 1)
                         Text("Welcome Back!")
                             .font(.title)
                             .fontWeight(.bold)
-                    }.padding(.bottom, 12)
+                    }
+                    
+                    Spacer(minLength: 20)
                     
                     HStack {
                         HStack(spacing: 12) {
@@ -66,24 +68,25 @@ struct HomeView: View {
                         .background(Color.ascent)
                         .foregroundColor(.white)
                         .cornerRadius(10)
-                    }.padding(.bottom, 5)
+                    }
+                    
+                    Spacer(minLength: 20)
                     
                     VStack(alignment: .leading) {
-                        Spacer(minLength: 15)
-                        Text("Explore Categories").font(.headline).fontWeight(.bold).foregroundColor(Color.ascentDark).padding(.bottom, 13)
-                        ScrollView(.horizontal, content: {
+                        Text("Explore Categories").font(.headline).fontWeight(.bold).foregroundColor(Color.ascentDark).padding(.bottom, 10)
+                        ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 20) {
                                 ForEach(categories) { category in
                                     CategoryCard(category: category)
                                 }
-                            }.padding(.bottom, 15)
-                        })
+                            }
+                        }
                     }
                     
-                    Spacer(minLength: 10)
+                    Spacer(minLength: 20)
                     
                     VStack(alignment: .leading) {
-                        Text("Bestselling Products").font(.headline).fontWeight(.bold).foregroundColor(Color.ascentDark).padding(.bottom, 13)
+                        Text("Bestselling Products").font(.headline).fontWeight(.bold).foregroundColor(Color.ascentDark).padding(.bottom, 10)
                         LazyVGrid(columns: [GridItem(.flexible(), spacing: 17), GridItem(.flexible(), spacing: 17)], spacing: 17, content: {
                             ProductCard()
                             ProductCard()
