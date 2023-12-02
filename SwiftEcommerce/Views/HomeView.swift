@@ -1,17 +1,5 @@
 import SwiftUI
 
-struct DataResponse: Decodable {
-    let status: Bool
-    let message: String
-    let data: [Category]
-}
-
-struct Category: Decodable, Identifiable {
-    let id: Int
-    let name: String
-    let thumbnail_image: String
-}
-
 struct HomeView: View {
     
     @State var categories: [Category] = []
@@ -21,7 +9,7 @@ struct HomeView: View {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
                     do {
-                        let apiResponse = try JSONDecoder().decode(DataResponse.self, from: data)
+                        let apiResponse = try JSONDecoder().decode(CategoryDataResponse.self, from: data)
                         DispatchQueue.main.async {
                             self.categories = apiResponse.data
                         }
@@ -35,29 +23,50 @@ struct HomeView: View {
     
     @State var searchQuery: String = "";
     
+    
+    @State private var selectedOption = 0
+    let options = ["Hyderabad", "Nagpur", "Mumbai"]
+
+    
     var body: some View {
         NavigationStack {
-            VStack {
-                HStack {
-                    HStack(spacing: 12) {
-                        Image(systemName: "magnifyingglass").foregroundColor(.gray)
-                        TextField("Search Products", text: $searchQuery)
-                    }.padding(.horizontal, 20)
-                        .padding(.vertical, 14)
-                        .background(Color.gray.opacity(0.1))
-                        .cornerRadius(10)
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(systemName: "magnifyingglass")
-                    })
-                    .padding(15)
-                    .background(Color.ascent)
-                    .foregroundColor(.white)
-                    .cornerRadius(10)
-                }.padding(.bottom, 5)
+            ScrollView(.vertical) {
                 
-                ScrollView(.vertical, content: {
+                VStack(alignment: .leading) {
+                        
+                    VStack(alignment: .leading) {
+                        HStack(spacing: 0) {
+                            Image(systemName: "location")
+                                .font(.title3)
+                            Picker("Select an option", selection: $selectedOption) {
+                                ForEach(0..<options.count) { index in
+                                    Text(options[index])
+                                }
+                            }.tint(Color.black).fontWeight(.medium)
+                        }.padding(.bottom, 1)
+                        Text("Welcome Back!")
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }.padding(.bottom, 12)
+                    
+                    HStack {
+                        HStack(spacing: 12) {
+                            Image(systemName: "magnifyingglass").foregroundColor(.gray)
+                            TextField("Search Products", text: $searchQuery)
+                        }.padding(.horizontal, 20)
+                            .padding(.vertical, 14)
+                            .background(Color.gray.opacity(0.1))
+                            .cornerRadius(10)
+                        Button(action: {
+                            
+                        }, label: {
+                            Image(systemName: "magnifyingglass")
+                        })
+                        .padding(15)
+                        .background(Color.ascent)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                    }.padding(.bottom, 5)
                     
                     VStack(alignment: .leading) {
                         Spacer(minLength: 15)
@@ -86,7 +95,7 @@ struct HomeView: View {
                         })
                         
                     }
-                })
+                }
                 
             }.onAppear() {
                 fetchCategories()

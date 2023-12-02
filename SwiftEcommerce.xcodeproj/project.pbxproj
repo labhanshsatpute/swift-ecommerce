@@ -28,6 +28,7 @@
 		95A7A7EF2B187DD500C3479B /* NotificationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A7A7EE2B187DD500C3479B /* NotificationButton.swift */; };
 		95F803B42B1B0920004EAF6E /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F803B32B1B0920004EAF6E /* CategoryCard.swift */; };
 		95F803B72B1B54FF004EAF6E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F803B62B1B54FF004EAF6E /* Constants.swift */; };
+		95F803BC2B1B9FEE004EAF6E /* Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F803BB2B1B9FEE004EAF6E /* Structs.swift */; };
 		A3A5BF812B19EB4400382575 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5BF802B19EB4400382575 /* GetStartedView.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		95A7A7EE2B187DD500C3479B /* NotificationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationButton.swift; sourceTree = "<group>"; };
 		95F803B32B1B0920004EAF6E /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
 		95F803B62B1B54FF004EAF6E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		95F803BB2B1B9FEE004EAF6E /* Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Structs.swift; sourceTree = "<group>"; };
 		A3A5BF802B19EB4400382575 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				95F803B62B1B54FF004EAF6E /* Constants.swift */,
+				95F803BB2B1B9FEE004EAF6E /* Structs.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				956DC1BC2B1659DF00CB2401 /* HomeView.swift in Sources */,
 				956DC1B62B16596C00CB2401 /* AccountView.swift in Sources */,
 				956DC1B82B16598F00CB2401 /* CartView.swift in Sources */,
+				95F803BC2B1B9FEE004EAF6E /* Structs.swift in Sources */,
 				A3A5BF812B19EB4400382575 /* GetStartedView.swift in Sources */,
 				9578C59C2B16656800431873 /* NotificationView.swift in Sources */,
 				95F803B42B1B0920004EAF6E /* CategoryCard.swift in Sources */,
