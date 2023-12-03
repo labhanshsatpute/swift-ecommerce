@@ -11,16 +11,6 @@ struct CartItemCard: View {
     
     @State var count: Int = 1
     
-    func showAlert(title: String, message: String) {
-            let alertBox = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alertBox.addAction(okAction)
-            if let view = UIApplication.shared.keyWindow?.rootViewController {
-                view.present(alertBox, animated: true)
-            }
-        }
-
-    
     var body: some View {
         HStack(alignment: .top, spacing: 12) {
             Image("productImage")
