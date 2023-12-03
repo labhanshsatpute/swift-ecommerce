@@ -6,7 +6,8 @@ struct ProductCard: View {
             Image("productImage")
                 .resizable()
                 .aspectRatio(contentMode: .fill).cornerRadius(10).padding(.bottom, 5)
-            VStack(alignment: .leading, spacing: 7) {                HStack {
+            VStack(alignment: .leading, spacing: 7) {
+                HStack {
                     Text("Mens Clothing").font(.caption2).foregroundColor(.gray)
                     Spacer()
                     HStack(spacing: 2) {
