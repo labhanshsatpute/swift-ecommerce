@@ -9,8 +9,6 @@ struct CartView: View {
                 VStack(alignment: .leading, spacing: 15) {
                     CartItemCard()
                     CartItemCard()
-                    CartItemCard()
-                    CartItemCard()
                 }
                 
                 
