@@ -1,17 +1,34 @@
-//
-//  SwiftEcommerceApp.swift
-//  SwiftEcommerce
-//
-//  Created by Labhansh Satpute on 28/11/23.
-//
-
 import SwiftUI
+import Foundation
 
 @main
 struct SwiftEcommerceApp: App {
+    
+    @State var getStartedViewed = false
+
+    func setGetStarted() {
+        let defaults = UserDefaults.standard
+        let checkGetStarted = defaults.bool(forKey: "getStartedViewed")
+        if !checkGetStarted {
+            defaults.set(true, forKey: "getStartedViewed")
+        }
+        else {
+            getStartedViewed = true
+        }
+    }
+    
     var body: some Scene {
         WindowGroup {
-            GetStartedView()
+            
+            if getStartedViewed {
+                ContentView()
+            }
+            else {
+                GetStartedView().onAppear() {
+                    setGetStarted()
+                }
+            }
+            
         }
     }
 }

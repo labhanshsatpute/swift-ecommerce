@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var selectedTab: String = "My Cart"
+    @State var selectedTab: String = "Home"
     
     var body: some View {
         NavigationStack {
@@ -27,7 +27,10 @@ struct ContentView: View {
                     Image(systemName: "person.crop.circle")
                     Text("My Account")
                 }.tag("My Account")
-            }.tint(Color.ascent).frame(maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).padding(0).toolbarBackground(Color.white, for: .tabBar)
+            }
+            .tint(Color.ascent).frame(maxHeight:/*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+            .padding(0).toolbarBackground(Color.white, for: .tabBar)
+            
 
         }.navigationBarBackButtonHidden(true)
     }
