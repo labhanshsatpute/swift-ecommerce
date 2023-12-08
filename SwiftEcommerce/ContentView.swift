@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var selectedTab: String = "Home"
+    @State var selectedTab: String = "My Account"
     
     var body: some View {
         NavigationStack {

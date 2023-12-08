@@ -32,6 +32,11 @@
 		A35804172B1CB81400A65E51 /* CartItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35804162B1CB81400A65E51 /* CartItemCard.swift */; };
 		A35804192B1CCD9D00A65E51 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35804182B1CCD9D00A65E51 /* Helpers.swift */; };
 		A3A5BF812B19EB4400382575 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5BF802B19EB4400382575 /* GetStartedView.swift */; };
+		A3ABA1332B23844A00938726 /* AddressBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1322B23844A00938726 /* AddressBookView.swift */; };
+		A3ABA1352B238E8500938726 /* MyOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1342B238E8500938726 /* MyOrdersView.swift */; };
+		A3ABA1372B238EF500938726 /* FAQsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1362B238EF500938726 /* FAQsView.swift */; };
+		A3ABA1392B238F3800938726 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1382B238F3800938726 /* PrivacyPolicyView.swift */; };
+		A3ABA13B2B238F7900938726 /* AllSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA13A2B238F7900938726 /* AllSettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +66,11 @@
 		A35804162B1CB81400A65E51 /* CartItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCard.swift; sourceTree = "<group>"; };
 		A35804182B1CCD9D00A65E51 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		A3A5BF802B19EB4400382575 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
+		A3ABA1322B23844A00938726 /* AddressBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookView.swift; sourceTree = "<group>"; };
+		A3ABA1342B238E8500938726 /* MyOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersView.swift; sourceTree = "<group>"; };
+		A3ABA1362B238EF500938726 /* FAQsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsView.swift; sourceTree = "<group>"; };
+		A3ABA1382B238F3800938726 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		A3ABA13A2B238F7900938726 /* AllSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +155,11 @@
 				956DC1C12B165A4500CB2401 /* RegisterView.swift */,
 				9578C59B2B16656700431873 /* NotificationView.swift */,
 				A3A5BF802B19EB4400382575 /* GetStartedView.swift */,
+				A3ABA1322B23844A00938726 /* AddressBookView.swift */,
+				A3ABA1342B238E8500938726 /* MyOrdersView.swift */,
+				A3ABA1362B238EF500938726 /* FAQsView.swift */,
+				A3ABA1382B238F3800938726 /* PrivacyPolicyView.swift */,
+				A3ABA13A2B238F7900938726 /* AllSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -266,6 +281,8 @@
 			files = (
 				956DC1BC2B1659DF00CB2401 /* HomeView.swift in Sources */,
 				956DC1B62B16596C00CB2401 /* AccountView.swift in Sources */,
+				A3ABA1352B238E8500938726 /* MyOrdersView.swift in Sources */,
+				A3ABA1392B238F3800938726 /* PrivacyPolicyView.swift in Sources */,
 				956DC1B82B16598F00CB2401 /* CartView.swift in Sources */,
 				95F803BC2B1B9FEE004EAF6E /* Structs.swift in Sources */,
 				A35804192B1CCD9D00A65E51 /* Helpers.swift in Sources */,
@@ -275,7 +292,9 @@
 				9544F38B2B1A446A00104B25 /* ProductCard.swift in Sources */,
 				956DC1BA2B1659A900CB2401 /* ForgotPasswordView.swift in Sources */,
 				956DC1B12B16572C00CB2401 /* ButtonSecondary.swift in Sources */,
+				A3ABA13B2B238F7900938726 /* AllSettingsView.swift in Sources */,
 				95A7A7EF2B187DD500C3479B /* NotificationButton.swift in Sources */,
+				A3ABA1332B23844A00938726 /* AddressBookView.swift in Sources */,
 				956DC1AF2B16564600CB2401 /* ButtonPrimary.swift in Sources */,
 				956DC1A02B1655D100CB2401 /* ContentView.swift in Sources */,
 				956DC19E2B1655D100CB2401 /* SwiftEcommerceApp.swift in Sources */,
@@ -287,6 +306,7 @@
 				95A7A7ED2B187DA900C3479B /* HeaderTitle.swift in Sources */,
 				A35804172B1CB81400A65E51 /* CartItemCard.swift in Sources */,
 				956DC1B42B1658D900CB2401 /* InputBox.swift in Sources */,
+				A3ABA1372B238EF500938726 /* FAQsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

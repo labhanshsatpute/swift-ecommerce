@@ -59,17 +59,30 @@ struct AccountView: View {
                 Divider()
                 
                 VStack(alignment: .leading) {
-                    DashboardTab(icon: "shippingbox", label: "My Orders", description: "Manage your orders")
                     
-                    DashboardTab(icon: "globe", label: "Languages", description: "Manage application languages")
+                    NavigationLink(destination: MyOrdersView()) {
+                        DashboardTab(icon: "shippingbox", label: "My Orders", description: "Manage your orders")
+                    }
                     
-                    DashboardTab(icon: "questionmark.circle", label: "FAQs", description: "Manage your orders")
+                    NavigationLink(destination: AddressBookView()) {
+                        DashboardTab(icon: "globe", label: "Address Book", description: "Manage application Address Book")
+                    }
                     
-                    DashboardTab(icon: "lock.shield", label: "Privacy Policy", description: "Manage application languages")
+                    NavigationLink(destination: FAQsView()) {
+                        DashboardTab(icon: "questionmark.circle", label: "FAQs", description: "Manage your orders")
+                    }
                     
-                    DashboardTab(icon: "gearshape", label: "All settings", description: "Manage your orders")
+                    NavigationLink(destination: PrivacyPolicyView()) {
+                        DashboardTab(icon: "lock.shield", label: "Privacy Policy", description: "Manage application languages")
+                    }
                     
-                    DashboardTab(icon: "rectangle.portrait.and.arrow.right", label: "Log out", description: "Manage application languages")
+                    NavigationLink(destination: AllSettingsView()) {
+                        DashboardTab(icon: "gearshape", label: "All settings", description: "Manage your orders")
+                    }
+                    
+                    NavigationLink(destination: LoginView()) {
+                        DashboardTab(icon: "rectangle.portrait.and.arrow.right", label: "Log out", description: "Manage application languages")
+                    }
                     
                 }
             }.padding(.horizontal, 15).padding(.top, 10)
