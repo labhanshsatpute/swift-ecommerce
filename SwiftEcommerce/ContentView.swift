@@ -19,10 +19,10 @@ struct ContentView: View {
                     Image(systemName: "handbag")
                     Text("My Cart")
                 }.tag("My Cart").badge(3)
-                OrderView().tabItem {
+                CategoryView().tabItem {
                     Image(systemName: "shippingbox")
-                    Text("My Orders")
-                }.tag("My Orders")
+                    Text("Category")
+                }.tag("Category")
                 AccountView().tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("My Account")
