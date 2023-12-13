@@ -1,19 +1,9 @@
 import SwiftUI
 
-struct ChangeAddress: View {
-    
-    @Environment(\.dismiss) var dismiss
-    
-    var body: some View {
-        VStack(alignment: .leading) {
-            Text("Change Delivery Address")
-        }.presentationDetents([.height(250)]).padding(15)
-    }
-}
-
 struct CartView: View {
     
     @State var addressModalState: Bool = false
+    
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -34,7 +24,7 @@ struct CartView: View {
                         .padding(.horizontal, 7)
                         .padding(.vertical, 5).background(Color.ascent.opacity(0.1)).cornerRadius(5)
                         .sheet(isPresented: $addressModalState, content: {
-                            ChangeAddress().multilineTextAlignment(.leading)
+                            ChangeAddress()
                         })
                     }
                     Divider()
@@ -108,7 +98,7 @@ struct CartView: View {
                             }
                         }
                     }
-                }.padding(.horizontal, 15).padding(.top, 10).padding(.bottom, 20)
+                }.padding(.horizontal, 15).padding(.top, 10)
             }
             HStack(spacing: 20) {
                 VStack(alignment: .leading, spacing: 5) {
@@ -118,8 +108,11 @@ struct CartView: View {
                     Text("$999.00").font(.title3).foregroundColor(Color.ascentDark).fontWeight(.bold)
                 }
                 Spacer()
-                ButtonPrimary(text: "Place Order")
-            }.frame(alignment: .bottom).padding(15).overlay(Rectangle().frame(width: nil, height: 1, alignment: .top).foregroundColor(Color.gray), alignment: .top)
+                ButtonPrimary(rightIcon: "arrow.right", text: "Place Order")
+            }
+            .frame(alignment: .bottom)
+            .padding(15)
+            .overlay(Rectangle().frame(width: nil, height: 1, alignment: .top).foregroundColor(Color.gray.opacity(0.3)), alignment: .top)
 
 
         }

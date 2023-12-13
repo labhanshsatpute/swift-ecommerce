@@ -23,10 +23,7 @@ struct HomeView: View {
     
     @State var searchQuery: String = "";
     
-    
-    @State private var selectedCity = 0
-    let cities = ["Hyderabad", "Nagpur", "Mumbai"]
-
+    @State var addressModalState: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -34,16 +31,21 @@ struct HomeView: View {
                 
                 VStack(alignment: .leading) {
                         
-                    VStack(alignment: .leading) {
-                        HStack(spacing: 0) {
-                            Image(systemName: "location")
-                                .font(.title3)
-                            Picker("Select an option", selection: $selectedCity) {
-                                ForEach(0..<cities.count) { index in
-                                    Text(cities[index])
+                    VStack(alignment: .leading, spacing: 20) {
+                        Button(action: {
+                            addressModalState = true
+                        }) {
+                            HStack(spacing: 10) {
+                                Image(systemName: "location")
+                                    .font(.title3).fontWeight(.medium)
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("Hyderabad").font(.subheadline).fontWeight(.semibold)
+                                    Text("Indira Nagar, Gachibowli Flyover").font(.caption)
                                 }
-                            }.tint(Color.black).fontWeight(.medium)
-                        }.padding(.bottom, 1)
+                            }.foregroundColor(Color.ascentDark)
+                        }.sheet(isPresented: $addressModalState, content: {
+                            ChangeAddress()
+                        })
                         Text("Welcome Back!")
                             .font(.title)
                             .fontWeight(.bold)
