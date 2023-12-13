@@ -1,8 +1,15 @@
 import SwiftUI
+import MapKit
+import Foundation
+import CoreLocation
 
 struct ChangeAddress: View {
         
     @State var pincode: String = ""
+    @State var mapModalState: Bool = false
+    
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 17.441701, longitude: 78.361002), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
+
     
     var body: some View {
         VStack(alignment: .leading, spacing: 15) {
@@ -14,7 +21,7 @@ struct ChangeAddress: View {
             }
             VStack(spacing: 10) {
                 Button(action: {
-                    
+                    mapModalState = true
                 }) {
                     HStack(spacing: 8) {
                         Image(systemName: "mappin.and.ellipse")
@@ -26,6 +33,19 @@ struct ChangeAddress: View {
                 }
                 .padding(.horizontal, 10)
                 .padding(.vertical, 5).background(Color.ascent.opacity(0.1)).cornerRadius(7)
+                .sheet(isPresented: $mapModalState, content: {
+                    VStack(alignment: .leading, spacing: 15) {
+                        VStack(alignment: .leading) {
+                            Text("Chhose Location")
+                                .font(.title3).fontWeight(.semibold)
+                            Text("Select your delivery location on map")
+                                .font(.footnote).fontWeight(.regular).foregroundColor(.gray)
+                        }
+                        Map(coordinateRegion: $region)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity).cornerRadius(15)
+                            
+                    }.padding(20).cornerRadius(15)
+                })
             }
             VStack(spacing: 10) {
                 InputBox(text: $pincode, placeHolder: "Enter Pincode (6 Digits)", label: "Your Pincode")
