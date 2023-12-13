@@ -8,8 +8,34 @@
 import SwiftUI
 
 struct AddressBookView: View {
+        
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
-        Text("Address Book")
+        NavigationStack {
+            NavigationView {
+                
+
+                Text("Address Book")
+
+            }
+            
+        }.navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: { dismiss() }, label: {
+                        Image(systemName: "chevron.left")
+                            .fontWeight(.bold)
+                            .font(.subheadline)
+                    }).foregroundColor(Color.ascentDark)
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Text("Address Book")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.ascentDark)
+                }
+            }
     }
 }
 
