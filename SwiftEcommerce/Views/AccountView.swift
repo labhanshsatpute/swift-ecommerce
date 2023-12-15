@@ -10,7 +10,7 @@ struct DashboardTab: View {
         VStack(alignment: .leading) {
             HStack(spacing: 15) {
                 Image(systemName: icon)
-                    .foregroundColor(.orange)
+                    .foregroundColor(Color.ascent)
                     .font(.system(size: 25))
                     .padding(10)
                     .background(Color.ascent.opacity(0.1))
@@ -49,7 +49,7 @@ struct AccountView: View {
                         Text("Kundan Kapgate")
                             .font(.title3)
                             .fontWeight(.semibold)
-                            .foregroundColor(Color.ascentDark)
+                            .foregroundColor(Color.black)
                         Text(email)
                             .font(.subheadline)
                             .foregroundColor(.gray)

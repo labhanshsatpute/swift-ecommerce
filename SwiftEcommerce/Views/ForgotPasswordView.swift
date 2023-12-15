@@ -7,14 +7,7 @@ struct ForgotPasswordView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.ascent.ignoresSafeArea()
-                Circle()
-                    .scale(1.7)
-                    .foregroundColor(.white.opacity(0.3))
-                Circle()
-                    .scale(1.5)
-                    .foregroundColor(.white)
-
+                
                 VStack(alignment: .center) {
                     
                     VStack(alignment: .center) {

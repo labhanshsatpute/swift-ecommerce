@@ -12,11 +12,6 @@ struct RegisterView: View {
         NavigationStack {
                 
             ZStack {
-                Color.ascent.ignoresSafeArea()
-                
-                Circle()
-                    .scale(1.9)
-                    .foregroundColor(.white)
                 
                 VStack(alignment: .center) {
                     Text("SignUp")
@@ -55,7 +50,7 @@ struct RegisterView: View {
                         }
                     }
                     
-                }.padding(.horizontal, 20)
+                }.padding(.horizontal, 40)
             }.navigationBarBackButtonHidden(true)
         }
     }

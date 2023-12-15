@@ -25,20 +25,23 @@ struct GetStartedClone: View {
                     .padding(.bottom, 8)
                 
                 Text("Welcome\nto our store")
-                    .font(.system(size: 48) .weight(.semibold))
+                    .font(.system(size: 48) .weight(.black))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
+                    .padding(.bottom, 12)
                                     
                 Text("Ger your groceries in as fast as one hour")
-                    .font(.system(size: 16) .weight(.semibold))
-                    .foregroundColor(Color.white.opacity(0.7))
+                    .font(.system(size: 16) .weight(.medium))
+                    .foregroundColor(Color.white.opacity(0.8))
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 20)
                 
-                NavigationLink(destination: LoginView(), label: {
-                    RoundButton(title: "Get Started")
-
-                })
+                NavigationLink(destination: LoginView()) {
+                    HStack {
+                        Text("Get Started").font(.title3).fontWeight(.semibold)
+                        Image(systemName: "arrow.right").fontWeight(.semibold)
+                    }.padding(18).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).background(Color.ascent).foregroundColor(.white).cornerRadius(17)
+                }
                                 
                 
                 Spacer()
