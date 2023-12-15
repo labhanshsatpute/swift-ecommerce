@@ -32,6 +32,9 @@
 		A3368E4D2B24E350006F19BE /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3368E4C2B24E350006F19BE /* CategoryView.swift */; };
 		A35804172B1CB81400A65E51 /* CartItemCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35804162B1CB81400A65E51 /* CartItemCard.swift */; };
 		A35804192B1CCD9D00A65E51 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35804182B1CCD9D00A65E51 /* Helpers.swift */; };
+		A36281232B2B81C60086E551 /* GetStartedClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36281222B2B81C50086E551 /* GetStartedClone.swift */; };
+		A36281252B2C1C6C0086E551 /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36281242B2C1C6C0086E551 /* UIExtension.swift */; };
+		A36281272B2C20760086E551 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36281262B2C20760086E551 /* RoundButton.swift */; };
 		A3A5BF812B19EB4400382575 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5BF802B19EB4400382575 /* GetStartedView.swift */; };
 		A3ABA1332B23844A00938726 /* AddressBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1322B23844A00938726 /* AddressBookView.swift */; };
 		A3ABA1352B238E8500938726 /* MyOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1342B238E8500938726 /* MyOrdersView.swift */; };
@@ -67,6 +70,9 @@
 		A3368E4C2B24E350006F19BE /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		A35804162B1CB81400A65E51 /* CartItemCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCard.swift; sourceTree = "<group>"; };
 		A35804182B1CCD9D00A65E51 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		A36281222B2B81C50086E551 /* GetStartedClone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedClone.swift; sourceTree = "<group>"; };
+		A36281242B2C1C6C0086E551 /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
+		A36281262B2C20760086E551 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		A3A5BF802B19EB4400382575 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		A3ABA1322B23844A00938726 /* AddressBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookView.swift; sourceTree = "<group>"; };
 		A3ABA1342B238E8500938726 /* MyOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersView.swift; sourceTree = "<group>"; };
@@ -149,7 +155,6 @@
 		956DC1AC2B16560D00CB2401 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				956DC1B52B16596C00CB2401 /* AccountView.swift */,
 				956DC1B72B16598F00CB2401 /* CartView.swift */,
 				956DC1B92B1659A900CB2401 /* ForgotPasswordView.swift */,
 				956DC1BB2B1659DF00CB2401 /* HomeView.swift */,
@@ -163,6 +168,8 @@
 				A3ABA1362B238EF500938726 /* FAQsView.swift */,
 				A3ABA1382B238F3800938726 /* PrivacyPolicyView.swift */,
 				A3ABA13A2B238F7900938726 /* AllSettingsView.swift */,
+				A36281222B2B81C50086E551 /* GetStartedClone.swift */,
+				956DC1B52B16596C00CB2401 /* AccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -172,6 +179,7 @@
 			children = (
 				956DC1AE2B16564600CB2401 /* ButtonPrimary.swift */,
 				956DC1B02B16572C00CB2401 /* ButtonSecondary.swift */,
+				A36281262B2C20760086E551 /* RoundButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -216,6 +224,7 @@
 				95F803B62B1B54FF004EAF6E /* Constants.swift */,
 				95F803BB2B1B9FEE004EAF6E /* Structs.swift */,
 				A35804182B1CCD9D00A65E51 /* Helpers.swift */,
+				A36281242B2C1C6C0086E551 /* UIExtension.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -294,6 +303,7 @@
 				956DC1B62B16596C00CB2401 /* AccountView.swift in Sources */,
 				A3ABA1352B238E8500938726 /* MyOrdersView.swift in Sources */,
 				A3ABA1392B238F3800938726 /* PrivacyPolicyView.swift in Sources */,
+				A36281232B2B81C60086E551 /* GetStartedClone.swift in Sources */,
 				956DC1B82B16598F00CB2401 /* CartView.swift in Sources */,
 				95BC11842B2A197E0029D8B9 /* ChangeAddress.swift in Sources */,
 				95F803BC2B1B9FEE004EAF6E /* Structs.swift in Sources */,
@@ -302,8 +312,10 @@
 				9578C59C2B16656800431873 /* NotificationView.swift in Sources */,
 				95F803B42B1B0920004EAF6E /* CategoryCard.swift in Sources */,
 				9544F38B2B1A446A00104B25 /* ProductCard.swift in Sources */,
+				A36281252B2C1C6C0086E551 /* UIExtension.swift in Sources */,
 				956DC1BA2B1659A900CB2401 /* ForgotPasswordView.swift in Sources */,
 				956DC1B12B16572C00CB2401 /* ButtonSecondary.swift in Sources */,
+				A36281272B2C20760086E551 /* RoundButton.swift in Sources */,
 				A3ABA13B2B238F7900938726 /* AllSettingsView.swift in Sources */,
 				95A7A7EF2B187DD500C3479B /* NotificationButton.swift in Sources */,
 				A3ABA1332B23844A00938726 /* AddressBookView.swift in Sources */,
