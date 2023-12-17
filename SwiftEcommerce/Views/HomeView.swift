@@ -3,6 +3,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State var categories: [Category] = []
+    @State var products: [Product] = []
     
     func fetchCategories() {
         if let url = URL(string: "\(apiBaseUrl)/api/category") {
@@ -20,6 +21,24 @@ struct HomeView: View {
             }.resume()
         }
     }
+    
+    func fetchProducts() {
+        if let url = URL(string: "\(apiBaseUrl)/api/product") {
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    do {
+                        let apiResponse = try JSONDecoder().decode(ProductDataResponse.self, from: data)
+                        DispatchQueue.main.async {
+                            self.products = apiResponse.data
+                        }
+                    } catch {
+                        print("Error decoding JSON: \(error)")
+                    }
+                }
+            }.resume()
+        }
+    }
+
     
     @State var searchQuery: String = "";
     
@@ -90,13 +109,9 @@ struct HomeView: View {
                     VStack(alignment: .leading) {
                         Text("Bestselling Products").font(.headline).fontWeight(.bold).foregroundColor(Color.ascentDark).padding(.bottom, 10)
                         LazyVGrid(columns: [GridItem(.flexible(), spacing: 17), GridItem(.flexible(), spacing: 17)], spacing: 17, content: {
-                            ProductCard()
-                            ProductCard()
-                            ProductCard()
-                            ProductCard()
-                            ProductCard()
-                            ProductCard()
-                            
+                            ForEach(products) { product in
+                                ProductCard(product: product)
+                            }
                         })
                         
                     }
@@ -104,6 +119,7 @@ struct HomeView: View {
                 
             }.onAppear() {
                 fetchCategories()
+                fetchProducts()
             }
         }.padding(.top,15).padding(.horizontal, 15)
     }
