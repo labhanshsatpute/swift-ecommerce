@@ -28,6 +28,7 @@ struct LoginView: View {
                             .padding(.bottom, 10)
                         InputBox(text: $password, placeHolder: "Enter Password", label: "Password")
                             .padding(.bottom, 10)
+                        
                         NavigationLink(destination: ForgotPasswordView()) {
                             Text("Forgot password?")
                                 .font(.subheadline)
