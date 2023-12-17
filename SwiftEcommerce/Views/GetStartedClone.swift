@@ -38,9 +38,15 @@ struct GetStartedClone: View {
                 
                 NavigationLink(destination: LoginView()) {
                     HStack {
-                        Text("Get Started").font(.title3).fontWeight(.semibold)
-                        Image(systemName: "arrow.right").fontWeight(.semibold)
-                    }.padding(18).frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/).background(Color.ascent).foregroundColor(.white).cornerRadius(17)
+                        Text("Get Started")
+                            .font(.title3)
+                            .fontWeight(.semibold)
+                        Image(systemName: "arrow.right")
+                            .fontWeight(.semibold)
+                    }.padding(18)
+                     .frame(maxWidth: .infinity)
+                     .background(Color.ascent)
+                     .foregroundColor(.white).cornerRadius(17)
                 }
                                 
                 
