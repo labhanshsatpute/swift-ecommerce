@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95316B282B2ED88600F3536E /* ProductPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95316B272B2ED88600F3536E /* ProductPreview.swift */; };
 		9544F38B2B1A446A00104B25 /* ProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9544F38A2B1A446A00104B25 /* ProductCard.swift */; };
 		956DC19E2B1655D100CB2401 /* SwiftEcommerceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956DC19D2B1655D100CB2401 /* SwiftEcommerceApp.swift */; };
 		956DC1A02B1655D100CB2401 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956DC19F2B1655D100CB2401 /* ContentView.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		95316B272B2ED88600F3536E /* ProductPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPreview.swift; sourceTree = "<group>"; };
 		9544F38A2B1A446A00104B25 /* ProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCard.swift; sourceTree = "<group>"; };
 		956DC19A2B1655D100CB2401 /* SwiftEcommerce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftEcommerce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956DC19D2B1655D100CB2401 /* SwiftEcommerceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftEcommerceApp.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				95BC11832B2A197E0029D8B9 /* ChangeAddress.swift */,
+				95316B272B2ED88600F3536E /* ProductPreview.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				95F803B42B1B0920004EAF6E /* CategoryCard.swift in Sources */,
 				9544F38B2B1A446A00104B25 /* ProductCard.swift in Sources */,
 				A36281252B2C1C6C0086E551 /* UIExtension.swift in Sources */,
+				95316B282B2ED88600F3536E /* ProductPreview.swift in Sources */,
 				956DC1BA2B1659A900CB2401 /* ForgotPasswordView.swift in Sources */,
 				956DC1B12B16572C00CB2401 /* ButtonSecondary.swift in Sources */,
 				A36281272B2C20760086E551 /* RoundButton.swift in Sources */,

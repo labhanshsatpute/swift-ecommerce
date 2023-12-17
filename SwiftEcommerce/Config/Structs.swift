@@ -23,6 +23,12 @@ struct ParentCategory: Decodable, Identifiable {
     let name: String
 }
 
+struct ProductMedia: Decodable, Identifiable {
+    let id: Int
+    let type: String
+    let path: String
+}
+
 struct Product: Decodable, Identifiable {
     let id: Int
     let name: String    
@@ -31,5 +37,6 @@ struct Product: Decodable, Identifiable {
     let parent_category: ParentCategory
     let price_original: String
     let price_discounted: String
+    let media: [ProductMedia]
 }
 

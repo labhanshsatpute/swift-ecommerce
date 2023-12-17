@@ -20,7 +20,7 @@ struct ButtonSecondary: View {
                         .fontWeight(.semibold)
                 }
                 Text(text)
-                    .font(.subheadline)
+                    .font(.headline)
                     .fontWeight(.semibold)
                 if let rightIcon = rightIcon {
                     Image(systemName: rightIcon)
