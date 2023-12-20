@@ -4,6 +4,25 @@ struct CategoryDataResponse: Decodable {
     let data: [Category]
 }
 
+struct AuthDataResponse: Decodable {
+    let status: Bool
+    let message: String
+    let data: Auth?
+}
+
+struct Auth: Decodable {
+    let token: String
+    let user: User
+}
+
+struct User: Decodable {
+    let name: String
+    let phone: String
+    let uuid: String
+    let email: String
+}
+
+
 struct ProductDataResponse: Decodable {
     let status: Bool
     let message: String

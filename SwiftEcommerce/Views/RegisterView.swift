@@ -1,12 +1,58 @@
 import SwiftUI
 
+
+struct RegisterData: Encodable {
+    let email: String
+    let phone: String
+    let name: String
+    let password: String
+    let password_confirmation: String
+}
+
 struct RegisterView: View {
     
-    @State private var name: String = ""
-    @State private var email: String = ""
-    @State private var number: String = ""
-    @State private var choosePassword: String = ""
-    @State private var confirmPassword: String = ""
+    @State private var name: String = "Labhansh"
+    @State private var email: String = "labhansh25@gmail.com"
+    @State private var number: String = "8668395680"
+    @State private var choosePassword: String = "labhansh"
+    @State private var confirmPassword: String = "labhansh"
+    
+    func handleRegister() {
+        
+        let data = RegisterData(
+            email: email,
+            phone: number,
+            name: name,
+            password: choosePassword,
+            password_confirmation: confirmPassword
+        )
+        
+        let url = URL(string: "\(apiBaseUrl)/api/user/register")!
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try! JSONEncoder().encode(data)
+        request.setValue(
+            "application/json",
+            forHTTPHeaderField: "Content-Type"
+        )
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                do {
+                    let apiResponse = try JSONDecoder().decode(AuthDataResponse.self, from: data)
+                    if apiResponse.status == false {
+                        print(apiResponse.message)
+                    }
+                    else {
+                        print(apiResponse.data?.token)
+                    }
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                }
+            }
+        }.resume()
+    }
     
     var body: some View {
         NavigationStack {
@@ -38,7 +84,9 @@ struct RegisterView: View {
                         InputBox(text: $confirmPassword, placeHolder: "Confirg Password", label: "Confirg Password")
                             .padding(.bottom, 10)
                         
-                        ButtonPrimary(rightIcon: "chevron.right", text: "SignUp")
+                        ButtonPrimary(handleClick: {
+                            self.handleRegister()
+                        }, rightIcon: "chevron.right", text: "SignUp")
                             .padding(.bottom, 10)
                         
                         NavigationLink(destination: LoginView()) {
