@@ -21,7 +21,7 @@ struct SwiftEcommerceApp: App {
         WindowGroup {
             
             if getStartedViewed {
-                ContentView()
+                LoginView()
             }
             else {
                 GetStartedView().onAppear() {

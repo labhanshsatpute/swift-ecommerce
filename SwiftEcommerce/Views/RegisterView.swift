@@ -11,11 +11,13 @@ struct RegisterData: Encodable {
 
 struct RegisterView: View {
     
-    @State private var name: String = "Labhansh"
-    @State private var email: String = "labhansh25@gmail.com"
-    @State private var number: String = "8668395680"
-    @State private var choosePassword: String = "labhansh"
-    @State private var confirmPassword: String = "labhansh"
+    @State private var name: String = ""
+    @State private var email: String = ""
+    @State private var number: String = ""
+    @State private var choosePassword: String = ""
+    @State private var confirmPassword: String = ""
+    @State private var errorMessage: String = ""
+    @State private var redirectToHome: Bool = false
     
     func handleRegister() {
         
@@ -42,10 +44,11 @@ struct RegisterView: View {
                 do {
                     let apiResponse = try JSONDecoder().decode(AuthDataResponse.self, from: data)
                     if apiResponse.status == false {
-                        print(apiResponse.message)
+                        errorMessage = apiResponse.message
                     }
                     else {
-                        print(apiResponse.data?.token)
+                        errorMessage = ""
+                        redirectToHome = true
                     }
                 } catch {
                     print("Error decoding JSON: \(error)")
@@ -70,6 +73,18 @@ struct RegisterView: View {
                         .font(.footnote)
                         .fontWeight(.medium)
                         .foregroundColor(Color.gray)
+                    
+                    if !errorMessage.isEmpty {
+                        HStack{
+                            Image(systemName: "exclamationmark.circle")
+                            Text(errorMessage)
+                        }
+                        .padding(.bottom, 20)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.red)
+
+                    }
                     
                     VStack {
                         InputBox(text: $name, placeHolder: "Enter Name", label: "Name")
@@ -96,9 +111,14 @@ struct RegisterView: View {
                                 .padding(.bottom, 10)
                                 .foregroundColor(Color.black)
                         }
-                    }
+                    }.textInputAutocapitalization(.never)
                     
                 }.padding(.horizontal, 40)
+                
+                NavigationLink(destination: ContentView(), isActive: $redirectToHome) {
+                    
+                }
+
             }.navigationBarBackButtonHidden(true)
         }
     }

@@ -1,11 +1,54 @@
 import SwiftUI
 
+
+struct LoginData: Encodable {
+    let email: String
+    let password: String
+}
+
 struct LoginView: View {
     
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var redirectToSignUp = false
+    @State private var errorMessage: String = ""
+    @State private var redirectToHome: Bool = false
     
+    func handleLogin() {
+        
+        let data = LoginData(
+            email: email,
+            password: password
+        )
+        
+        let url = URL(string: "\(apiBaseUrl)/api/user/login")!
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try! JSONEncoder().encode(data)
+        request.setValue(
+            "application/json",
+            forHTTPHeaderField: "Content-Type"
+        )
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                do {
+                    let apiResponse = try JSONDecoder().decode(AuthDataResponse.self, from: data)
+                    if apiResponse.status == false {
+                        errorMessage = apiResponse.message
+                    }
+                    else {
+                        errorMessage = ""
+                        redirectToHome = true
+                    }
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                }
+            }
+        }.resume()
+    }
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -23,6 +66,18 @@ struct LoginView: View {
                             .foregroundColor(Color.gray)
                     }.padding(.bottom, 20)
                     
+                    if !errorMessage.isEmpty {
+                        HStack {
+                            Image(systemName: "exclamationmark.circle")
+                            Text(errorMessage)
+                        }
+                        .padding(.bottom, 20)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.red)
+
+                    }
+                    
                     VStack {
                         InputBox(text: $email, placeHolder: "Enter Email", label: "Email Address")
                             .padding(.bottom, 10)
@@ -36,7 +91,9 @@ struct LoginView: View {
                                 .padding(.bottom, 10)
                                 .foregroundColor(Color.black)
                         }
-                        ButtonPrimary(rightIcon: "chevron.right", text: "Login")
+                        ButtonPrimary(handleClick: {
+                            self.handleLogin()
+                        }, rightIcon: "chevron.right", text: "Login")
                             .padding(.bottom, 10)
                         HStack {
                             VStack {
@@ -52,20 +109,25 @@ struct LoginView: View {
                         
                         
                         NavigationLink(destination: RegisterView(), isActive: $redirectToSignUp ,  label: {
+                            
                             ButtonSecondary(handleClick: {
                                 redirectToSignUp = true
                             },text: "Dosen't have an account ?")
                             .padding(.bottom, 10)
                         })
                         
-                        
-                    }
+                    }.textInputAutocapitalization(.never)
                     
                 }.padding(50)
                 
+                NavigationLink(destination: ContentView(), isActive: $redirectToHome) {
+                    
+                }
                 
             }
         }.navigationBarBackButtonHidden(true)
+        
+        
 
     }
 }
