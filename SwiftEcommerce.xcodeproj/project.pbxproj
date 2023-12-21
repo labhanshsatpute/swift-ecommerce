@@ -36,6 +36,8 @@
 		A36281232B2B81C60086E551 /* GetStartedClone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36281222B2B81C50086E551 /* GetStartedClone.swift */; };
 		A36281252B2C1C6C0086E551 /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36281242B2C1C6C0086E551 /* UIExtension.swift */; };
 		A36281272B2C20760086E551 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36281262B2C20760086E551 /* RoundButton.swift */; };
+		A37CF6D72B34AF2900698FAE /* AddAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CF6D62B34AF2900698FAE /* AddAddress.swift */; };
+		A37CF6DC2B34CF2800698FAE /* EditAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CF6DB2B34CF2800698FAE /* EditAddress.swift */; };
 		A3A5BF812B19EB4400382575 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5BF802B19EB4400382575 /* GetStartedView.swift */; };
 		A3ABA1332B23844A00938726 /* AddressBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1322B23844A00938726 /* AddressBookView.swift */; };
 		A3ABA1352B238E8500938726 /* MyOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1342B238E8500938726 /* MyOrdersView.swift */; };
@@ -75,6 +77,8 @@
 		A36281222B2B81C50086E551 /* GetStartedClone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedClone.swift; sourceTree = "<group>"; };
 		A36281242B2C1C6C0086E551 /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		A36281262B2C20760086E551 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		A37CF6D62B34AF2900698FAE /* AddAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddress.swift; sourceTree = "<group>"; };
+		A37CF6DB2B34CF2800698FAE /* EditAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddress.swift; sourceTree = "<group>"; };
 		A3A5BF802B19EB4400382575 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		A3ABA1322B23844A00938726 /* AddressBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookView.swift; sourceTree = "<group>"; };
 		A3ABA1342B238E8500938726 /* MyOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersView.swift; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 				A3ABA13A2B238F7900938726 /* AllSettingsView.swift */,
 				A36281222B2B81C50086E551 /* GetStartedClone.swift */,
 				956DC1B52B16596C00CB2401 /* AccountView.swift */,
+				A37CF6D62B34AF2900698FAE /* AddAddress.swift */,
+				A37CF6DB2B34CF2800698FAE /* EditAddress.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,6 +317,7 @@
 				95BC11842B2A197E0029D8B9 /* ChangeAddress.swift in Sources */,
 				95F803BC2B1B9FEE004EAF6E /* Structs.swift in Sources */,
 				A35804192B1CCD9D00A65E51 /* Helpers.swift in Sources */,
+				A37CF6DC2B34CF2800698FAE /* EditAddress.swift in Sources */,
 				A3A5BF812B19EB4400382575 /* GetStartedView.swift in Sources */,
 				9578C59C2B16656800431873 /* NotificationView.swift in Sources */,
 				95F803B42B1B0920004EAF6E /* CategoryCard.swift in Sources */,
@@ -334,6 +341,7 @@
 				95A7A7ED2B187DA900C3479B /* HeaderTitle.swift in Sources */,
 				A35804172B1CB81400A65E51 /* CartItemCard.swift in Sources */,
 				956DC1B42B1658D900CB2401 /* InputBox.swift in Sources */,
+				A37CF6D72B34AF2900698FAE /* AddAddress.swift in Sources */,
 				A3ABA1372B238EF500938726 /* FAQsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
