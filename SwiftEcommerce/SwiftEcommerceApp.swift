@@ -5,6 +5,7 @@ import Foundation
 struct SwiftEcommerceApp: App {
     
     @State var getStartedViewed = false
+    @State var isLoggedIn = false
 
     func setGetStarted() {
         let defaults = UserDefaults.standard
@@ -17,18 +18,27 @@ struct SwiftEcommerceApp: App {
         }
     }
     
+    func checkLoggedIn() {
+        if UserDefaults.standard.string(forKey: "accessToken")?.isEmpty == nil {
+            isLoggedIn = false
+        }
+        else {
+            isLoggedIn = true
+        }
+    }
+ 
     var body: some Scene {
         WindowGroup {
             
-            if getStartedViewed {
-                LoginView()
-            }
-            else {
-                GetStartedView().onAppear() {
-                    setGetStarted()
+            if isLoggedIn {
+                    ContentView()
                 }
-            }
-            
+                else {
+                    LoginView().onAppear() {
+                        checkLoggedIn()
+                    }
+                }
+                        
         }
     }
 }

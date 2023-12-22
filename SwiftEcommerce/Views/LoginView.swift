@@ -39,6 +39,7 @@ struct LoginView: View {
                         errorMessage = apiResponse.message
                     }
                     else {
+                        UserDefaults.standard.set(apiResponse.data!.token, forKey: "accessToken")
                         errorMessage = ""
                         redirectToHome = true
                     }
