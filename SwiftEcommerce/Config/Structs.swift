@@ -15,7 +15,7 @@ struct Auth: Decodable {
     let user: User
 }
 
-struct User: Decodable {
+struct User: Decodable, Encodable {
     let name: String
     let phone: String
     let uuid: String
@@ -59,3 +59,9 @@ struct Product: Decodable, Identifiable {
     let media: [ProductMedia]
 }
 
+
+struct UserDataResponse: Decodable {
+    let status: Bool
+    let message: String
+    let data: User
+}

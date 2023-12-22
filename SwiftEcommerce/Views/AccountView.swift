@@ -33,10 +33,34 @@ struct DashboardTab: View {
     }
 }
 
+
+
 struct AccountView: View {
+        
+    @State var user = User(name: "", phone: "", uuid: "", email: "")
     
-    var email: String = "kundankapgate2005@gmail.com"
+    @State var redirectToLogin: Bool = false
     
+    func fetchUserDetails() {
+        
+        let url = URL(string: "\(apiBaseUrl)/api/user")!
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(UserDefaults.standard.string(forKey: "accessToken")!)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                do {
+                    let apiResponse = try JSONDecoder().decode(UserDataResponse.self, from: data)
+                    user = apiResponse.data
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                }
+            }
+        }.resume()
+    }
+
     var body: some View {
         ScrollView {
             
@@ -46,11 +70,11 @@ struct AccountView: View {
                         .font(.system(size: 50))
                         .foregroundColor(Color.gray)
                     VStack(alignment: .leading) {
-                        Text("Kundan Kapgate")
+                        Text(user.name)
                             .font(.title3)
                             .fontWeight(.semibold)
                             .foregroundColor(Color.black)
-                        Text(email)
+                        Text(user.email)
                             .font(.subheadline)
                             .foregroundColor(.gray)
                     }
@@ -80,13 +104,22 @@ struct AccountView: View {
                         DashboardTab(icon: "gearshape", label: "All settings", description: "Manage your orders")
                     }
                     
-                    NavigationLink(destination: LoginView()) {
+                    Button(action: {
+                        UserDefaults.standard.removeObject(forKey: "accessToken")
+                        redirectToLogin = true
+                    }) {
                         DashboardTab(icon: "rectangle.portrait.and.arrow.right", label: "Log out", description: "Manage application languages")
+                    }
+                    
+                    NavigationLink(destination: LoginView(), isActive: $redirectToLogin) {
+                        
                     }
                     
                 }
             }.padding(.horizontal, 15).padding(.top, 10)
-        }.padding(0)
+        }.padding(0).onAppear() {
+            fetchUserDetails()
+        }
         
     }
 }
