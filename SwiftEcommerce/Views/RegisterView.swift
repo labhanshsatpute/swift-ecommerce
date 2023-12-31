@@ -116,7 +116,7 @@ struct RegisterView: View {
                     
                 }.padding(.horizontal, 40)
                 
-                NavigationLink(destination: ContentView(), isActive: $redirectToHome) {
+                NavigationLink(destination: ContentView(selectedTab: "Home"), isActive: $redirectToHome) {
                     
                 }
 

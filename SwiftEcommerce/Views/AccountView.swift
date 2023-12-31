@@ -37,7 +37,7 @@ struct DashboardTab: View {
 
 struct AccountView: View {
         
-    @State var user = User(name: "", phone: "", uuid: "", email: "")
+    @State var user = User(name: "", phone: "", uuid: "", email: "", profile_image: "")
     
     @State var redirectToLogin: Bool = false
     
@@ -66,16 +66,20 @@ struct AccountView: View {
             
             VStack(alignment: .leading) {
                 HStack(alignment: .center, spacing: 10) {
-                    Image(systemName: "person.crop.circle")
-                        .font(.system(size: 50))
-                        .foregroundColor(Color.gray)
+                    AsyncImage(url: URL(string: user.profile_image)) { image in
+                        image.resizable()
+                            .aspectRatio(contentMode: .fit).cornerRadius(25)
+                            .frame(width: 50, height: 50)
+                    } placeholder: {
+                        ProgressView()
+                    }
                     VStack(alignment: .leading) {
                         Text(user.name)
                             .font(.title3)
                             .fontWeight(.semibold)
                             .foregroundColor(Color.black)
                         Text(user.email)
-                            .font(.subheadline)
+                            .font(.footnote)
                             .foregroundColor(.gray)
                     }
                     
@@ -100,8 +104,8 @@ struct AccountView: View {
                         DashboardTab(icon: "lock.shield", label: "Privacy Policy", description: "Manage application languages")
                     }
                     
-                    NavigationLink(destination: AllSettingsView()) {
-                        DashboardTab(icon: "gearshape", label: "All settings", description: "Manage your orders")
+                    NavigationLink(destination: AccountSettingView()) {
+                        DashboardTab(icon: "gearshape", label: "Account Settings", description: "Manage your orders")
                     }
                     
                     Button(action: {

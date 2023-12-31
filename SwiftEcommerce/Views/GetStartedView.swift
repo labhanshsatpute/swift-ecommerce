@@ -9,7 +9,7 @@ struct GetStartedView: View {
             VStack {
                 HStack {
                     Spacer()
-                    NavigationLink(destination: ContentView(), label: {
+                    NavigationLink(destination: ContentView(selectedTab: "Home"), label: {
                         Text("Slip to main").fontWeight(.medium)
                         Image(systemName: "chevron.right").font(.subheadline).fontWeight(.semibold)
                     }).foregroundColor(Color.black.opacity(0.7))

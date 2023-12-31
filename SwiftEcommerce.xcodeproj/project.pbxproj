@@ -43,7 +43,7 @@
 		A3ABA1352B238E8500938726 /* MyOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1342B238E8500938726 /* MyOrdersView.swift */; };
 		A3ABA1372B238EF500938726 /* FAQsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1362B238EF500938726 /* FAQsView.swift */; };
 		A3ABA1392B238F3800938726 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1382B238F3800938726 /* PrivacyPolicyView.swift */; };
-		A3ABA13B2B238F7900938726 /* AllSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA13A2B238F7900938726 /* AllSettingsView.swift */; };
+		A3ABA13B2B238F7900938726 /* AccountSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA13A2B238F7900938726 /* AccountSettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,7 +84,7 @@
 		A3ABA1342B238E8500938726 /* MyOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersView.swift; sourceTree = "<group>"; };
 		A3ABA1362B238EF500938726 /* FAQsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsView.swift; sourceTree = "<group>"; };
 		A3ABA1382B238F3800938726 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
-		A3ABA13A2B238F7900938726 /* AllSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSettingsView.swift; sourceTree = "<group>"; };
+		A3ABA13A2B238F7900938726 /* AccountSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,7 +173,7 @@
 				A3ABA1342B238E8500938726 /* MyOrdersView.swift */,
 				A3ABA1362B238EF500938726 /* FAQsView.swift */,
 				A3ABA1382B238F3800938726 /* PrivacyPolicyView.swift */,
-				A3ABA13A2B238F7900938726 /* AllSettingsView.swift */,
+				A3ABA13A2B238F7900938726 /* AccountSettingView.swift */,
 				A36281222B2B81C50086E551 /* GetStartedClone.swift */,
 				956DC1B52B16596C00CB2401 /* AccountView.swift */,
 				A37CF6D62B34AF2900698FAE /* AddAddress.swift */,
@@ -327,7 +327,7 @@
 				956DC1BA2B1659A900CB2401 /* ForgotPasswordView.swift in Sources */,
 				956DC1B12B16572C00CB2401 /* ButtonSecondary.swift in Sources */,
 				A36281272B2C20760086E551 /* RoundButton.swift in Sources */,
-				A3ABA13B2B238F7900938726 /* AllSettingsView.swift in Sources */,
+				A3ABA13B2B238F7900938726 /* AccountSettingView.swift in Sources */,
 				95A7A7EF2B187DD500C3479B /* NotificationButton.swift in Sources */,
 				A3ABA1332B23844A00938726 /* AddressBookView.swift in Sources */,
 				956DC1AF2B16564600CB2401 /* ButtonPrimary.swift in Sources */,

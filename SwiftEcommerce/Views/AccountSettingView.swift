@@ -1,0 +1,167 @@
+struct UserUpdateDetails: Decodable, Encodable {
+    let name: String
+    let email: String
+    let phone: String
+    let account_password: String
+}
+
+struct UserUpdateResponse: Decodable {
+    let status: Bool
+    let message: String
+    let data: User
+}
+
+
+import SwiftUI
+
+struct AccountSettingView: View {
+    
+    @Environment(\.dismiss) var dismiss
+    
+    @State private var name: String = ""
+    @State private var email: String = ""
+    @State private var phone: String = ""
+    @State private var account_password: String = ""
+    
+    @State private var successMessage: String = ""
+    @State private var errorMessage: String = ""
+    
+    @State private var showAlert: Bool = false
+    
+    @State var user = User(name: "", phone: "", uuid: "", email: "", profile_image: "")
+    
+    func fetchUserDetails() {
+        
+        let url = URL(string: "\(apiBaseUrl)/api/user")!
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.setValue("Bearer \(UserDefaults.standard.string(forKey: "accessToken")!)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                do {
+                    let apiResponse = try JSONDecoder().decode(UserDataResponse.self, from: data)
+                    user = apiResponse.data
+                    name = apiResponse.data.name
+                    email = apiResponse.data.email
+                    phone = apiResponse.data.phone
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                }
+            }
+        }.resume()
+    }
+    
+    func handleUpdateDetails() {
+        
+        let data = UserUpdateDetails(
+            name: name,
+            email: email,
+            phone: phone,
+            account_password: account_password
+        )
+        
+        let url = URL(string: "\(apiBaseUrl)/api/user/update/details")!
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try! JSONEncoder().encode(data)
+        request.setValue(
+            "application/json",
+            forHTTPHeaderField: "Content-Type"
+        )
+        request.setValue("Bearer \(UserDefaults.standard.string(forKey: "accessToken")!)", forHTTPHeaderField: "Authorization")
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let data = data {
+                do {
+                    let apiResponse = try JSONDecoder().decode(UserUpdateResponse.self, from: data)
+                    if apiResponse.status == false {
+                        errorMessage = apiResponse.message
+                    }
+                    else {
+                        successMessage = apiResponse.message
+                        showAlert = true
+                        errorMessage = ""
+                    }
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                }
+            }
+        }.resume()
+    }
+
+
+    
+    var body: some View {
+        NavigationStack{
+            
+            ScrollView{
+                VStack {
+                    
+                    if !errorMessage.isEmpty {
+                        HStack {
+                            Image(systemName: "exclamationmark.circle")
+                            Text(errorMessage)
+                        }
+                        .padding(.bottom, 20)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.red)
+                    }
+                   
+                    InputBox(text: $name, placeHolder: "Enter Name", label: "Name")
+                        .padding(.bottom, 10)
+                        .autocapitalization(.none)
+                        
+                    InputBox(text: $email, placeHolder: "Email Address", label: "Email Address")
+                        .padding(.bottom, 10)
+                        .autocapitalization(.none)
+                        
+                    InputBox(text: $phone, placeHolder: "Enter Phone (10 Digits)", label: "Phone")
+                        .padding(.bottom, 10)
+                        .autocapitalization(.none)
+                    
+                    InputBox(text: $account_password, placeHolder: "Enter Password", label: "Password")
+                        .padding(.bottom, 10)
+                        .autocapitalization(.none)
+
+                    
+                    ButtonPrimary(handleClick: {
+                        handleUpdateDetails()
+                    }, text: "Save Changes")
+                    
+                }.padding()
+            }.onAppear() {
+                fetchUserDetails()
+            }
+            .alert(successMessage, isPresented: $showAlert) {
+                Button("OK", role: .cancel) {
+                    dismiss()
+                }
+            }
+        
+        }.navigationBarBackButtonHidden(true)
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: { dismiss() }, label: {
+                        Image(systemName: "chevron.left")
+                            .fontWeight(.bold)
+                            .font(.subheadline)
+                    }).foregroundColor(Color.ascentDark)
+                }
+                ToolbarItem(placement: .topBarLeading) {
+                    Text("Account Setting")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.ascentDark)
+                }
+            }
+
+    }
+}
+
+#Preview {
+    AccountSettingView()
+}

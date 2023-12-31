@@ -82,8 +82,10 @@ struct LoginView: View {
                     VStack {
                         InputBox(text: $email, placeHolder: "Enter Email", label: "Email Address")
                             .padding(.bottom, 10)
+                            .autocapitalization(.none)
                         InputBox(text: $password, placeHolder: "Enter Password", label: "Password")
                             .padding(.bottom, 10)
+                            .autocapitalization(.none)
                         
                         NavigationLink(destination: ForgotPasswordView()) {
                             Text("Forgot password?")
@@ -121,7 +123,7 @@ struct LoginView: View {
                     
                 }.padding(50)
                 
-                NavigationLink(destination: ContentView(), isActive: $redirectToHome) {
+                NavigationLink(destination: ContentView(selectedTab: "Home"), isActive: $redirectToHome) {
                     
                 }
                 

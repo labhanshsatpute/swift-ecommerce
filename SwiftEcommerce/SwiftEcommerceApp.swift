@@ -31,7 +31,7 @@ struct SwiftEcommerceApp: App {
         WindowGroup {
             
             if isLoggedIn {
-                    ContentView()
+                    ContentView(selectedTab: "Home")
                 }
                 else {
                     LoginView().onAppear() {

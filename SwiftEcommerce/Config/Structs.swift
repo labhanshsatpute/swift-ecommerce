@@ -18,8 +18,9 @@ struct Auth: Decodable {
 struct User: Decodable, Encodable {
     let name: String
     let phone: String
-    let uuid: String
+    let uuid: String?
     let email: String
+    let profile_image: String
 }
 
 
