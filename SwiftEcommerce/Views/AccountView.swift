@@ -100,8 +100,8 @@ struct AccountView: View {
                         DashboardTab(icon: "questionmark.circle", label: "FAQs", description: "Manage your orders")
                     }
                     
-                    NavigationLink(destination: PrivacyPolicyView()) {
-                        DashboardTab(icon: "lock.shield", label: "Privacy Policy", description: "Manage application languages")
+                    NavigationLink(destination: ChangePasswordView()) {
+                        DashboardTab(icon: "lock.shield", label: "Chenge Password", description: "Manage application languages")
                     }
                     
                     NavigationLink(destination: AccountSettingView()) {

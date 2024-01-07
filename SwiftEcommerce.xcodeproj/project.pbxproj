@@ -39,10 +39,10 @@
 		A37CF6D72B34AF2900698FAE /* AddAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CF6D62B34AF2900698FAE /* AddAddress.swift */; };
 		A37CF6DC2B34CF2800698FAE /* EditAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = A37CF6DB2B34CF2800698FAE /* EditAddress.swift */; };
 		A3A5BF812B19EB4400382575 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3A5BF802B19EB4400382575 /* GetStartedView.swift */; };
+		A3AB1EB92B4A78E500D7EB0A /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AB1EB82B4A78E500D7EB0A /* ChangePasswordView.swift */; };
 		A3ABA1332B23844A00938726 /* AddressBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1322B23844A00938726 /* AddressBookView.swift */; };
 		A3ABA1352B238E8500938726 /* MyOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1342B238E8500938726 /* MyOrdersView.swift */; };
 		A3ABA1372B238EF500938726 /* FAQsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1362B238EF500938726 /* FAQsView.swift */; };
-		A3ABA1392B238F3800938726 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA1382B238F3800938726 /* PrivacyPolicyView.swift */; };
 		A3ABA13B2B238F7900938726 /* AccountSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3ABA13A2B238F7900938726 /* AccountSettingView.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,10 +80,10 @@
 		A37CF6D62B34AF2900698FAE /* AddAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAddress.swift; sourceTree = "<group>"; };
 		A37CF6DB2B34CF2800698FAE /* EditAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAddress.swift; sourceTree = "<group>"; };
 		A3A5BF802B19EB4400382575 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
+		A3AB1EB82B4A78E500D7EB0A /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
 		A3ABA1322B23844A00938726 /* AddressBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressBookView.swift; sourceTree = "<group>"; };
 		A3ABA1342B238E8500938726 /* MyOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersView.swift; sourceTree = "<group>"; };
 		A3ABA1362B238EF500938726 /* FAQsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQsView.swift; sourceTree = "<group>"; };
-		A3ABA1382B238F3800938726 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
 		A3ABA13A2B238F7900938726 /* AccountSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,12 +172,12 @@
 				A3ABA1322B23844A00938726 /* AddressBookView.swift */,
 				A3ABA1342B238E8500938726 /* MyOrdersView.swift */,
 				A3ABA1362B238EF500938726 /* FAQsView.swift */,
-				A3ABA1382B238F3800938726 /* PrivacyPolicyView.swift */,
 				A3ABA13A2B238F7900938726 /* AccountSettingView.swift */,
 				A36281222B2B81C50086E551 /* GetStartedClone.swift */,
 				956DC1B52B16596C00CB2401 /* AccountView.swift */,
 				A37CF6D62B34AF2900698FAE /* AddAddress.swift */,
 				A37CF6DB2B34CF2800698FAE /* EditAddress.swift */,
+				A3AB1EB82B4A78E500D7EB0A /* ChangePasswordView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,7 +311,6 @@
 				956DC1BC2B1659DF00CB2401 /* HomeView.swift in Sources */,
 				956DC1B62B16596C00CB2401 /* AccountView.swift in Sources */,
 				A3ABA1352B238E8500938726 /* MyOrdersView.swift in Sources */,
-				A3ABA1392B238F3800938726 /* PrivacyPolicyView.swift in Sources */,
 				A36281232B2B81C60086E551 /* GetStartedClone.swift in Sources */,
 				956DC1B82B16598F00CB2401 /* CartView.swift in Sources */,
 				95BC11842B2A197E0029D8B9 /* ChangeAddress.swift in Sources */,
@@ -343,6 +342,7 @@
 				956DC1B42B1658D900CB2401 /* InputBox.swift in Sources */,
 				A37CF6D72B34AF2900698FAE /* AddAddress.swift in Sources */,
 				A3ABA1372B238EF500938726 /* FAQsView.swift in Sources */,
+				A3AB1EB92B4A78E500D7EB0A /* ChangePasswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
