@@ -1,10 +1,3 @@
-//
-//  ChengePasswordView.swift
-//  SwiftEcommerce
-//
-//  Created by kundan kapgate on 07/01/24.
-//
-
 struct PasswordUpdateDetails: Decodable, Encodable {
     let current_password: String
     let password: String
@@ -15,7 +8,6 @@ struct UpdateResponse: Decodable {
     let status: Bool
     let message: String
 }
-
 
 import SwiftUI
 
@@ -40,7 +32,7 @@ struct ChangePasswordView: View {
             password_confirmation: password_confirmation
         )
         
-        let url = URL(string: "\(apiBaseUrl)/api/user/update/details")!
+        let url = URL(string: "\(apiBaseUrl)/api/user/update/password")!
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -54,7 +46,7 @@ struct ChangePasswordView: View {
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let data = data {
                 do {
-                    let apiResponse = try JSONDecoder().decode(UserUpdateResponse.self, from: data)
+                    let apiResponse = try JSONDecoder().decode(UpdateResponse.self, from: data)
                     if apiResponse.status == false {
                         errorMessage = apiResponse.message
                     }
@@ -97,14 +89,13 @@ struct ChangePasswordView: View {
                         .padding(.bottom, 10)
                         .autocapitalization(.none)
                     
-                    InputBox(text: $password_confirmation, placeHolder: "Enter Password Confirmation", label: "Password Confirmation")
+                    InputBox(text: $password_confirmation, placeHolder: "Repeat Password", label: "Confirm Password")
                         .padding(.bottom, 10)
                         .autocapitalization(.none)
-
                     
                     ButtonPrimary(handleClick: {
                         handleUpdatePassword()
-                    }, text: "Save Changes")
+                    }, text: "Update Password")
                     
                 }.padding()
             }.onAppear()

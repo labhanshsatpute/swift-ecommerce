@@ -101,7 +101,7 @@ struct AccountView: View {
                     }
                     
                     NavigationLink(destination: ChangePasswordView()) {
-                        DashboardTab(icon: "lock.shield", label: "Chenge Password", description: "Manage application languages")
+                        DashboardTab(icon: "person.badge.key", label: "Change Password", description: "Chnage your account password")
                     }
                     
                     NavigationLink(destination: AccountSettingView()) {
